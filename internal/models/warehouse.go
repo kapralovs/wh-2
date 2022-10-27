@@ -1,11 +1,25 @@
 package models
 
 type Warehouse struct {
-	ID    int64
+	// Идентификатор склада
+	ID int64
+	// Название склада в системе
+	Name string
+	// Ячейки склада
 	Cells []*Cell
 }
 
 type Cell struct {
-	ID      string
+	// Идентификатор
+	ID int64
+	// Строковое представление адреса ячейки
+	Name string
+	// Номер ряда
+	Row int
+	// Номер секции
+	Column int
+	// Номер ячейки
+	Num int
+	// Содержимое ячейки
 	Content []*Product
 }
