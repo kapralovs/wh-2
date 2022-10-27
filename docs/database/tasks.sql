@@ -4,6 +4,9 @@ CREATE TABLE tasks (
     assigned_to BIGINT,
     event_id BIGINT NOT NULL,
     event jsonb NOT NULL
+    created_at TIMESTAMP NOT NULL,
+    updated_at TIMESTAMP,
+    deleted_at TIMESTAMP
 );
 
 COMMENT ON TABLE public.tasks IS 'Задачи';
@@ -12,6 +15,9 @@ COMMENT ON COLUMN tasks.id IS 'Первичный ключ';
 COMMENT ON COLUMN tasks.type_of IS 'Идентификатор исполнителя';
 COMMENT ON COLUMN tasks.assigned_to IS 'Идентификатор исполнителя';
 COMMENT ON COLUMN tasks.event IS 'Содержимое задачи';
+COMMENT ON COLUMN tasks.created_at IS 'Дата создания';
+COMMENT ON COLUMN tasks.updated_at IS 'Дата обновления';
+COMMENT ON COLUMN tasks.deleted_at IS 'Дата удаления';
 
 CREATE TABLE order_tasks (
     id BIGSERIAL PRIMARY KEY,
