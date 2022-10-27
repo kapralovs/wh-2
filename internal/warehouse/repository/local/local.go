@@ -8,12 +8,12 @@ import (
 
 type LocalRepo struct {
 	mu    *sync.Mutex
-	users map[int]*models.Warehouse
+	users map[int64]*models.Warehouse
 }
 
 func NewRepo() *LocalRepo {
 	return &LocalRepo{
 		mu:    new(sync.Mutex),
-		users: make(map[int]*models.Warehouse),
+		users: make(map[int64]*models.Warehouse),
 	}
 }
