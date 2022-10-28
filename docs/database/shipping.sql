@@ -1,6 +1,7 @@
 CREATE TABLE deliveries (
     id BIGSERIAL PRIMARY KEY,
     client_id BIGINT NOT NULL,
+    cell VARCHAR NOT NULL,
     address VARCHAR NOT NULL,
     content jsonb NOT NULL
     created_at TIMESTAMP NOT NULL,
@@ -12,7 +13,8 @@ COMMENT ON TABLE public.deliveries IS 'Поставки';
 
 COMMENT ON COLUMN deliveries.id IS 'Первичный ключ';
 COMMENT ON COLUMN deliveries.client_id IS 'Идентификатор заказчика';
-COMMENT ON COLUMN deliveries.address IS 'Адрес';
+COMMENT ON COLUMN deliveries.cell IS 'Адрес ячейки';
+COMMENT ON COLUMN deliveries.address IS 'Адрес ячейки';
 COMMENT ON COLUMN deliveries.content IS 'Содержимое';
 COMMENT ON COLUMN deliveries.created_at IS 'Дата создания';
 COMMENT ON COLUMN deliveries.updated_at IS 'Дата обновления';
